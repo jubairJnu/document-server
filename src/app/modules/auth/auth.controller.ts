@@ -17,7 +17,7 @@ const signUpUser = catchAsync(async (req: Request, res: Response) => {
 const loginUser = catchAsync(async (req: Request, res: Response) => {
   const result = await authServices.loginUserInToDB(req.body);
 
-  const { refreshToken, accessToken, needPasswordChange } = result;
+  const { refreshToken, accessToken } = result;
 
   res.cookie("refreshToken", refreshToken, {
     secure: config.node_env == "developemnt" ? false : true,
@@ -30,7 +30,6 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
     message: "Login Successfully",
     data: {
       accessToken,
-      needPasswordChange,
     },
   });
 });
