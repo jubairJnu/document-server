@@ -34,6 +34,21 @@ const getUserArticle = catchAsync(
   }
 );
 
+const summaryArticle = catchAsync(
+  async (req: IAuthenticatedRequest, res: Response) => {
+    const { id } = req.params;
+    const result = await articleServices.summarizeArticleFromDB(
+      id,
+      req.user?.id
+    );
+    sendResponse(res, {
+      success: true,
+      statusCode: 200,
+      message: "Article Summarize Successfully",
+      data: result,
+    });
+  }
+);
 const deleteArticles = catchAsync(
   async (req: IAuthenticatedRequest, res: Response) => {
     const { id } = req.params;
@@ -50,5 +65,6 @@ const deleteArticles = catchAsync(
 export const articleController = {
   creaArticles,
   getUserArticle,
+  summaryArticle,
   deleteArticles,
 };

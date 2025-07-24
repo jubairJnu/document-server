@@ -14,4 +14,5 @@ export default {
   jwt_reset_expires_in: process.env.JWT_RESET_EXPIRES_IN,
 
   jwt_refresh_expires_in: process.env.JWT_REFRESH_EXPIRES_IN,
+  ai_secret: process.env.AI_SECRET_KEY,
 };
