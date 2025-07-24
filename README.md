@@ -1,15 +1,48 @@
-# document-server
 
-To install dependencies:
+# Document Server
+
+
+
+
+
+
+## Live URL
+
+https://document-server-eight.vercel.app/
+
+
+## Run Locally
+
+Clone the project
 
 ```bash
-bun install
+  https://github.com/jubairJnu/document-server.git
 ```
 
-To run:
+Go to the project directory
 
 ```bash
-bun run index.ts
+  document-server
 ```
 
-This project was created using `bun init` in bun v1.2.5. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Install dependencies
+
+```bash
+  npm install
+ 
+```
+
+
+
+```bash
+  npm run dev
+```
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env.example file
+
+
+
+
