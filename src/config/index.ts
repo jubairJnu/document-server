@@ -14,10 +14,4 @@ export default {
   jwt_reset_expires_in: process.env.JWT_RESET_EXPIRES_IN,
 
   jwt_refresh_expires_in: process.env.JWT_REFRESH_EXPIRES_IN,
-  salt_round: process.env.BCRIPT_SALT_ROUND,
-  email_secret: process.env.MAIL_SECRET,
-  sender_email: process.env.EMAIL,
-  cloudinary_name: process.env.CLOUD_NAME,
-  cloudinary_api_key: process.env.API_KEY,
-  cloudinary_secret: process.env.API_SECRET,
 };
