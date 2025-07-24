@@ -1,6 +1,7 @@
 import { Server } from "http";
-import app from "./app";
+
 import config from "./app/config";
+import app from "./app";
 
 const port = config.port;
 
@@ -10,4 +11,6 @@ async function main() {
   });
 }
 
-main();
+main().catch((err) => {
+  console.error("❌ Server failed to start:", err);
+});

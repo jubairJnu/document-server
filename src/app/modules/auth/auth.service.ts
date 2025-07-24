@@ -2,10 +2,10 @@ import bcrypt from "bcrypt";
 import type { Secret } from "jsonwebtoken";
 import config from "../../config";
 import AppError from "../../errors/AppError";
-import { authHelpers } from "../../utils/authHelpter";
+import { authHelpers } from "../../../utils/authHelpter";
 
-import { prisma } from "../../utils/prisma";
 import type { TAuthUser } from "./auth.inerface";
+import { prisma } from "../../../utils/prisma";
 
 const signUpUserIntoDB = async (paylaod: TAuthUser) => {
   const { email, password, name } = paylaod;
@@ -71,7 +71,6 @@ const loginUserInToDB = async (payload: any) => {
   );
 
   return {
-    needPasswordChange: userData.needPasswordChange,
     accessToken,
     refreshToken,
   };

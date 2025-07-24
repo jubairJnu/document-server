@@ -1,8 +1,9 @@
 import { NextFunction, Request, Response } from "express";
-import { jwtHelpers } from "../../helpers/jwtHelpers";
+
 import config from "../config";
 import { Secret } from "jsonwebtoken";
-import { IAuthenticatedRequest } from "../interfaces/authenticate";
+import { authHelpers } from "../../utils/authHelpter";
+import { IAuthenticatedRequest } from "../interface/authInterface";
 
 const auth = (...roles: string[]) => {
   return async (
@@ -17,12 +18,10 @@ const auth = (...roles: string[]) => {
         throw new Error("You are not authorized");
       }
 
-      const verifyToken = jwtHelpers.verifyToken(
+      const verifyToken = authHelpers.verifyToken(
         token,
         config.jwt_access_secret as Secret
       );
-
-
 
       // ! if not verify
 

@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
-import catchAsync from "../../utils/CatchAsync";
+import catchAsync from "../../../utils/CatchAsync";
 import { authServices } from "./auth.service";
 import config from "../../config";
-import sendResponse from "../../utils/SendResponse";
+import sendResponse from "../../../utils/SendResponse";
 
 const signUpUser = catchAsync(async (req: Request, res: Response) => {
   const result = await authServices.signUpUserIntoDB(req.body);
