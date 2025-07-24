@@ -33,6 +33,21 @@ const getUserArticle = catchAsync(
     });
   }
 );
+const getUserSingleArticles = catchAsync(
+  async (req: IAuthenticatedRequest, res: Response) => {
+    const { id } = req.params;
+    const result = await articleServices.getUserSingleArticlesFromDB(
+      id,
+      req.user?.id
+    );
+    sendResponse(res, {
+      success: true,
+      statusCode: 200,
+      message: "Article Retrived Successfully",
+      data: result,
+    });
+  }
+);
 
 const summaryArticle = catchAsync(
   async (req: IAuthenticatedRequest, res: Response) => {
@@ -65,6 +80,7 @@ const deleteArticles = catchAsync(
 export const articleController = {
   creaArticles,
   getUserArticle,
+  getUserSingleArticles,
   summaryArticle,
   deleteArticles,
 };

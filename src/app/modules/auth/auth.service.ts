@@ -54,7 +54,7 @@ const loginUserInToDB = async (payload: any) => {
   const jwtPaload = {
     email: userData.email,
     role: userData.role,
-    id: userData.email,
+    id: userData.id,
   };
 
   //access token
