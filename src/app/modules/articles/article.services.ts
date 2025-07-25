@@ -137,6 +137,7 @@ const summarizeArticleFromDB = async (id: string, authorId: string) => {
     data: { summary },
   });
 
+
   return summary;
 };
 
